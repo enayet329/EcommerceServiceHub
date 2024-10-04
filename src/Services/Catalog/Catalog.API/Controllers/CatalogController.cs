@@ -29,7 +29,7 @@ namespace Catalog.API.Controllers
 
         [HttpGet("id:length(24)", Name = "GetProductById")]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<ActionResult<Product>> GetProductById(string id)
         {
             var product = await _repository.GetProductByIdAsync(id);
